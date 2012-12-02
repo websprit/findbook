@@ -15,5 +15,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/sina_palce"/>
+
+    <Button
+        android:id="@+id/baidu_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/baidu_location" />
     
 </LinearLayout>

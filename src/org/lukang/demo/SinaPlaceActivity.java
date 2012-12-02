@@ -67,7 +67,7 @@ public class SinaPlaceActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				// 认证
+				//
 				weibo.authorize(SinaPlaceActivity.this,
 						new MyWeiboDialogListener());
 			}
@@ -110,7 +110,7 @@ public class SinaPlaceActivity extends Activity {
 	}
 	
 	/**
-	 * 用于位置定位的回调监听
+	 * ���������������������������������
 	 * @author tinyao
 	 *
 	 */
@@ -124,7 +124,7 @@ public class SinaPlaceActivity extends Activity {
 			
 			
 			pd = new ProgressDialog(SinaPlaceActivity.this);
-			pd.setMessage("正在获取附近地点...");
+			pd.setMessage("������������������������...");
 			pd.show();
 			
 			List<NameValuePair> params = new LinkedList<NameValuePair>();
@@ -163,7 +163,7 @@ public class SinaPlaceActivity extends Activity {
 	}
 	
 	/**
-	 * 用于新浪微博OAuth认证的回调监听器
+	 * ������������������OAuth������������������������
 	 * @author tinyao
 	 *
 	 */
@@ -172,7 +172,7 @@ public class SinaPlaceActivity extends Activity {
 		@Override
 		public void onComplete(Bundle values) {
 			/***
-			 * 保存token and expires_in
+			 * ������token and expires_in
 			 */
 
 			String token = values.getString("access_token");
@@ -213,7 +213,7 @@ public class SinaPlaceActivity extends Activity {
 	}
 	
 	/**
-	 * Http请求监听器，用于处理HttpAsyncTask中的响应事件
+	 * Http������������������������������HttpAsyncTask������������������
 	 * @author tinyao
 	 *
 	 */
@@ -232,7 +232,7 @@ public class SinaPlaceActivity extends Activity {
 			case HttpListener.FETCH_SINA_PLACES:
 				
 				String rrt = PlacesUtils.unicodeToString(String.valueOf(data));
-				// 解析返回的json字符串
+				// ���������������json���������
 				try {
 					ArrayList<Map<String,String>> list = PlacesUtils.parsePlacesNearby(rrt);
 					

@@ -42,6 +42,18 @@ public class MainActivity extends Activity {
 			}
 			
 		});
+		
+		Button baiduBtn = (Button)findViewById(R.id.baidu_location);
+		baiduBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(MainActivity.this, MyLocation.class);
+				startActivity(i);
+			}
+			
+		});
 
 	}
 
