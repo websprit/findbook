@@ -21,5 +21,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/baidu_location" />
+    <Button
+        android:id="@+id/item_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/item_location" />
     
 </LinearLayout>

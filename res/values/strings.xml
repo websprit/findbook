@@ -6,6 +6,8 @@
     <string name="title_activity_main">附近二手书</string>
     <string name="sina_palce">新浪位置服务</string>
     <string name="baidu_location">百度位置服务</string>
+    <string name="item_location">发布书籍</string>
+    
     <string name="sina_place_nearby">附近位置</string>
     <string name="gps_location">获取当前经纬度</string>
     <string name="sina_oauth">微博OAuth认证</string>

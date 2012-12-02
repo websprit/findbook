@@ -11,7 +11,7 @@ public class BaiduMapApiApp extends Application {
 	static BaiduMapApiApp mDemoApp;
 	
 	//百度MapAPI的管理类
-	private BMapManager mBMapMan = null;
+	public BMapManager mBMapMan = null;
 	
 
 	public BMapManager getmBMapMan() {
@@ -22,7 +22,7 @@ public class BaiduMapApiApp extends Application {
 		this.mBMapMan = mBMapMan;
 	}
 
-	private String mStrKey = "78503B7D59702379DEABDD248E302CAB1C63641E";
+	public String mStrKey = "78503B7D59702379DEABDD248E302CAB1C63641E";
 	public String getmStrKey() {
 		return mStrKey;
 	}

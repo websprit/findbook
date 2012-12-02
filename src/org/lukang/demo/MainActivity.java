@@ -1,5 +1,7 @@
 package org.lukang.demo;
 
+import org.lukang.demo.map.ItemizedOverlayDemo;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -50,6 +52,18 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent i = new Intent(MainActivity.this, MyLocation.class);
+				startActivity(i);
+			}
+			
+		});
+		
+		Button itemBtn = (Button)findViewById(R.id.item_location);
+		itemBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(MainActivity.this, ItemizedOverlayDemo.class);
 				startActivity(i);
 			}
 			

@@ -83,6 +83,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyLocation" > </activity>
+        <activity android:name=".map.ItemizedOverlayDemo" android:screenOrientation="sensor" 
+        	android:configChanges="orientation|keyboardHidden"> </activity>
         <activity android:name="org.lukang.weibo.net.WeiboWebviewActivity" >
         </activity>
     </application>
