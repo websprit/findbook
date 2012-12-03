@@ -24,6 +24,10 @@ public class ItemizedOverlayDemo extends MapActivity {
 	
 	LocationListener mLocationListener = null;
 	
+	MKLocationManager mLocationManager = null;
+	
+	MyLocationOverlay mLocationOverlay = null;	//定位图层
+	
 	static View mPopView = null;	
 	static MapView mMapView = null;
 	int iZoom = 0;
@@ -40,7 +44,8 @@ public class ItemizedOverlayDemo extends MapActivity {
 		}
 		app.mBMapMan.start();
         super.initMapActivity(app.mBMapMan);
-
+        
+     
      // 注册定位事件
         mLocationListener = new LocationListener(){
 			@Override
@@ -56,6 +61,17 @@ public class ItemizedOverlayDemo extends MapActivity {
         mMapView = (MapView)findViewById(R.id.bmapView);
         mMapView.setBuiltInZoomControls(true);
         mMapView.setDrawOverlayWhenZooming(true);
+        
+     // 初始化Location模块
+        mLocationManager = app.mBMapMan.getLocationManager();
+        // 通过enableProvider和disableProvider方法，选择定位的Provider
+        // mLocationManager.enableProvider(MKLocationManager.MK_NETWORK_PROVIDER);
+        // mLocationManager.disableProvider(MKLocationManager.MK_GPS_PROVIDER);
+        // 添加定位图层
+        mLocationOverlay = new MyLocationOverlay(this, mMapView);
+
+        mMapView.getOverlays().add(mLocationOverlay);
+
 
 //        mMapView.getController().setCenter(pt);
   
@@ -81,6 +97,8 @@ public class ItemizedOverlayDemo extends MapActivity {
 	protected void onPause() {
 		BaiduMapApiApp app = (BaiduMapApiApp)this.getApplication();
 		app.getmBMapMan().getLocationManager().removeUpdates(mLocationListener);
+		mLocationOverlay.disableMyLocation();
+        mLocationOverlay.disableCompass(); // 关闭指南针
 		if(app.mBMapMan != null)
 			app.mBMapMan.stop();
 		super.onPause();
@@ -89,6 +107,8 @@ public class ItemizedOverlayDemo extends MapActivity {
 	protected void onResume() {
 		BaiduMapApiApp app = (BaiduMapApiApp)this.getApplication();
 		app.getmBMapMan().getLocationManager().requestLocationUpdates(mLocationListener);
+        mLocationOverlay.enableMyLocation();
+        mLocationOverlay.enableCompass(); // 打开指南针
 		app.mBMapMan.start();
 		super.onResume();
 	}
