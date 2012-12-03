@@ -31,7 +31,7 @@ public class OverItemT extends ItemizedOverlay<OverlayItem> {
 		this.marker = marker;
 		this.mContext = context;
 		
-		mGeoList.add(new OverlayItem(mygp, "我的地点", "我的书"));
+		mGeoList.add(new OverlayItem(mygp, "我的位置", "我的位置"));
 		populate();  
 	}
 

@@ -67,6 +67,7 @@ public class ItemizedOverlayDemo extends MapActivity {
 					mMapView.getOverlays().add(overitem); 
 					
 					mPopView=instance.getLayoutInflater().inflate(R.layout.popview, null);
+					
 					mMapView.addView( mPopView,
 			                new MapView.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
 			                		null, MapView.LayoutParams.TOP_LEFT));
